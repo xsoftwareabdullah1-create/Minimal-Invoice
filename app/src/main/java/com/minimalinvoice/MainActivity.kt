@@ -8,6 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.border
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -166,9 +167,8 @@ private fun InvoiceHomeScreen(
                 shape = RoundedCornerShape(12.dp),
                 icon = { Icon(Icons.Default.Add, contentDescription = null) },
                 text = { Text("New invoice") },
-                modifier = Modifier.animateContentSize(),
-                elevation = FloatingActionButtonDefaults.elevation(0.dp),
-                interactionSource = remember { androidx.compose.foundation.interaction.MutableInteractionSource() }
+                modifier = Modifier.animateContentSize().border(BorderStroke(1.dp, Accent), RoundedCornerShape(12.dp)),
+                elevation = FloatingActionButtonDefaults.elevation(0.dp)
             )
         }
     ) { padding ->
